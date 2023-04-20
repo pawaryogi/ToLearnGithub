@@ -36,5 +36,12 @@ namespace GithubDemo.Controllers
         {
             return "Yogesh Pawar";
         }
+        
+        //Added Comment on 20/04/2023 by Yogesh
+        [HttpGet("GetCity")]
+        public string GetCity()
+        {
+            return "Mumbai";
+        }
     }
 }
