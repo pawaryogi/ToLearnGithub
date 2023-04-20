@@ -31,7 +31,7 @@ namespace GithubDemo.Controllers
         }
 
         //Added Comment on 20/04/2023 by Yogesh
-        [HttpGet("GetLogged//nUsername")]
+        [HttpGet("GetLoggedInUsername")]
         public string GetLoggedINUserName()
         {
             return "Yogesh Pawar";
