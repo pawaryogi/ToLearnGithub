@@ -37,11 +37,21 @@ namespace GithubDemo.Controllers
             return "Yogesh Pawar";
         }
 
+
         // Feature Added on 19/04/23
         [HttpGet("GetMailId")]
         public string GetMailId()
         {
             return "Yogesh.Pawar@gmail.com";
+        }
+
+        
+        //Added Comment on 20/04/2023 by Yogesh
+        [HttpGet("GetCity")]
+        public string GetCity()
+        {
+            return "Mumbai";
+
         }
     }
 }
