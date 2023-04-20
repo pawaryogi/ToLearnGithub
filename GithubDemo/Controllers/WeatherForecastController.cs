@@ -30,7 +30,8 @@ namespace GithubDemo.Controllers
             .ToArray();
         }
 
-        [HttpGet("GetLoggedInUsername")]
+        //Added Comment on 20/04/2023
+        [HttpGet("GetLogged//nUsername")]
         public string GetLoggedINUserName()
         {
             return "Yogesh Pawar";
