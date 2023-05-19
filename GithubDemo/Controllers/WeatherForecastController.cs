@@ -54,6 +54,7 @@ namespace GithubDemo.Controllers
 
         }
 
+
         //Added Comment on 20/04/2023 by Yogesh
         [HttpGet("AddFeature3")]
         public string GetFeature3()
@@ -62,6 +63,12 @@ namespace GithubDemo.Controllers
 
         }
 
+        //Feature-1 Added
+        [HttpGet("GetContactNo")]
+        public string GetContactNo()
+        {
+            return "9988776655";
 
+        }
     }
 }
