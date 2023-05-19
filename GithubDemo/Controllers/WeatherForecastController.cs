@@ -53,5 +53,13 @@ namespace GithubDemo.Controllers
             return "Mumbai";
 
         }
+
+        //Feature-1 Added
+        [HttpGet("GetContactNo")]
+        public string GetContactNo()
+        {
+            return "9988776655";
+
+        }
     }
 }
