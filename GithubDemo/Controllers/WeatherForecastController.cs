@@ -53,5 +53,15 @@ namespace GithubDemo.Controllers
             return "Mumbai";
 
         }
+
+        //Added Comment on 20/04/2023 by Yogesh
+        [HttpGet("AddFeature3")]
+        public string GetFeature3()
+        {
+            return "Feature 3 Added successfully.";
+
+        }
+
+
     }
 }
