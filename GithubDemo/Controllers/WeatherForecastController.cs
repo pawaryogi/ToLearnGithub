@@ -54,6 +54,15 @@ namespace GithubDemo.Controllers
 
         }
 
+
+        //Added Comment on 20/04/2023 by Yogesh
+        [HttpGet("AddFeature3")]
+        public string GetFeature3()
+        {
+            return "Feature 3 Modified successfully on 19th May 23.";
+
+        }
+
         //Feature-1 Added
         [HttpGet("GetContactNo")]
         public string GetContactNo()
