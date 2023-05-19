@@ -42,7 +42,7 @@ namespace GithubDemo.Controllers
         [HttpGet("GetMailId")]
         public string GetMailId()
         {
-            return "Yogesh.Pawar@gmail.com";
+            return "pawar.yogesh@gmail.com";
         }
 
         
