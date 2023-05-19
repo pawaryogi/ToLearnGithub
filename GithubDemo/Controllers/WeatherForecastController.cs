@@ -34,7 +34,7 @@ namespace GithubDemo.Controllers
         [HttpGet("GetLoggedInUsername")]
         public string GetLoggedINUserName()
         {
-            return "Yogesh Pawar";
+            return "Yogesh Dattaram Pawar";
         }
 
 
@@ -50,7 +50,7 @@ namespace GithubDemo.Controllers
         [HttpGet("GetCity")]
         public string GetCity()
         {
-            return "Mumbai";
+            return "Thane";
 
         }
 
