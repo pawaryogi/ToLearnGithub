@@ -50,7 +50,7 @@ namespace GithubDemo.Controllers
         [HttpGet("GetCity")]
         public string GetCity()
         {
-            return "Thane";
+            return "Thane1";
 
         }
 
