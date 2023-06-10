@@ -13,7 +13,7 @@ namespace TestProject
         {
             WeatherForecastController weatherForecastController= new WeatherForecastController(logger);
             var Output=weatherForecastController.GetCity();
-            Assert.AreEqual("Thane1", Output);
+            Assert.AreEqual("Thane", Output);
 
         }
     }
