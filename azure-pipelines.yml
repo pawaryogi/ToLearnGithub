@@ -34,3 +34,8 @@ steps:
     projects: '**/*TestProject/*.csproj'
     arguments: '--configuration $(builldConfiguration)'
 
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(build.ArtifactStagingDirectory)'
+    artifact: 'drop'
+    publishLocation: 'pipeline'
