@@ -31,6 +31,6 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    projects: '''**/*TestProject/*.csproj'''
+    projects: '**/*TestProject/*.csproj'
     arguments: '--configuration $(builldConfiguration)'
 
