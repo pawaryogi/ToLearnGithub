@@ -9,10 +9,12 @@ trigger:
 stages:
   - stage: "BuildStage"
     displayName: "Build Stage"
-    variables:
-     buildConfiguration: 'Release'
     jobs:
       - job: "BuildJob"
+        pool:
+         vmImage: windows-latest
+        variables:
+         buildConfiguration: 'Release'
         steps:
           - task: DotNetCoreCLI@2
             displayName: "Restore Project"
@@ -25,12 +27,36 @@ stages:
             displayName: "Build Project"
             inputs:
               command: 'build'
-              projects: '**/*.csproj'
+              projects: '**/*.sln'
               arguments: '--configuration $(buildConfiguration)'
           
           - task: DotNetCoreCLI@2
             inputs:
               command: 'publish'
               publishWebProjects: true
-              arguments: '--configuration $(build.artifactStagingDirectory)'
+              arguments: '--configuration $(buildConfiguration) --output $(build.artifactStagingDirectory)'
+
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: '$(build.ArtifactStagingDirectory)'
+              artifact: 'drop'
+              publishLocation: 'pipeline'
+  
+  - stage: "DeployToDev"
+    dependsOn: "BuildStage"
+    displayName: "Deploy to Development"
+    jobs:
+      - job: "DeployToDevJob"
+        steps:
+         - task: DownloadPipelineArtifact@2
+           inputs:
+             buildType: 'current'
+             artifactName: 'drop'
+             targetPath: '$(Pipeline.Workspace)'
+
+         - task: IISWebAppDeploymentOnMachineGroup@0
+           inputs:
+             WebSiteName: 'MvcGithubDeploy'
+             Package: '$(Pipeline.Workspace)\**\*.zip'
+ 
 
