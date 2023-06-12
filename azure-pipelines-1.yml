@@ -53,10 +53,6 @@ stages:
              buildType: 'current'
              artifactName: 'drop'
              targetPath: '$(Pipeline.Workspace)'
-
-         - task: IISWebAppDeploymentOnMachineGroup@0
-           inputs:
-             WebSiteName: 'MvcGithubDeploy'
-             Package: '$(Pipeline.Workspace)\**\*.zip'
- 
+          
+             
 
